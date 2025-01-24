@@ -1,0 +1,48 @@
+{
+    "name": "croox/language-selector",
+    "description": "A Statamic addon for selecting languages in Bard fields",
+    "type": "statamic-addon",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daniel Wentsch"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "statamic/cms": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Croox\\LanguageSelector\\": "src"
+        }
+    },
+    "extra": {
+        "statamic": {
+            "name": "Language Selector",
+            "description": "A Statamic addon for selecting languages in Bard fields"
+        },
+        "laravel": {
+            "providers": [
+                "Croox\\LanguageSelector\\ServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "npm install",
+            "npm run build"
+        ],
+        "post-update-cmd": [
+            "npm install",
+            "npm run build"
+        ]
+    },
+    "config": {
+        "allow-plugins": {
+            "pixelfear/composer-dist-plugin": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
